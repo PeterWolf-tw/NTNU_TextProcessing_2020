@@ -13,9 +13,9 @@ def main(inputSTR):
     超過癮的啊啊啊啊！
     """
     print(messageSTR)
-    owo = "李詳弘 40947026s".split()
-    print(owo[0])
-    print(owo[1])
+    owo = "李詳弘 40947026s"
+    print(owo[0:3])
+    print(owo.split()[1])
 
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
