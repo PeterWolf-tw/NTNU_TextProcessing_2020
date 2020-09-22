@@ -17,5 +17,6 @@ def main(inputSTR):
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
 if __name__ == "__main__":
-    nameSTR = "PeterWolf"
-    main(nameSTR)
+    nameSTR = "吳文元 40947030S"
+    print(nameSTR.split()[0])
+    print(nameSTR.split()[1])
