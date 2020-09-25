@@ -25,7 +25,7 @@ def main(inputSTR):
     整堂課的資訊量爆炸，在知識的海洋裡衝浪
     超過癮的啊啊啊啊！
     """
-    #print(messageSTR)
+    print(messageSTR)
 
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
