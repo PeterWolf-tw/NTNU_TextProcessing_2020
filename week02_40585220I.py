@@ -7,17 +7,17 @@ def main(inputSTR):
     '''
     print("Hello {}, {}".format(inputSTR, "你好"))
 
-    myNameSTR = inputSTR[0:2]
-    myIDSTR = inputSTR[4:12]
+    myNameSTR = inputSTR[0:3]
+    myIDSTR = inputSTR[4:13]
 
     print("我的名字:{}".format(myNameSTR))
     print("我的學號:{}".format(myIDSTR))
 
 
     inputSTRLIST = inputSTR.split(" ")
-    print(inputSTRLIST)
-    print("我的名字：{}".format(inputSTRLIST[0]))
-    print("我的學號：{}".format(inputSTRLIST[1]))
+   
+    print("Name：{}".format(inputSTRLIST[0]))
+    print("ID：{}".format(inputSTRLIST[1]))
 
 
     messageSTR = """
