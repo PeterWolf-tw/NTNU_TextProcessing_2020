@@ -7,8 +7,8 @@ def main(inputSTR):
     '''
     print("Hello {},".format(inputSTR))
     inputSubSTR = inputSTR.split()
-    #or myNameSTR = inputSTR[0:2]
-    #   myIDSTR = inputSTR[4:12]
+    #or myNameSTR = inputSTR[0:3]
+    #   myIDSTR = inputSTR[4:13]
 
     messageSTR = """
     「程式設計與基礎資料型態與中文構詞學」
