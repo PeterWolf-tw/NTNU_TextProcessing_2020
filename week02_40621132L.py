@@ -7,6 +7,8 @@ def main(inputSTR):
     '''
     print("Hello {},".format(inputSTR))
     inputSubSTR = inputSTR.split()
+    #or myNameSTR = inputSTR[0:2]
+    #   myIDSTR = inputSTR[4:12]
 
     messageSTR = """
     「程式設計與基礎資料型態與中文構詞學」
@@ -14,8 +16,10 @@ def main(inputSTR):
     超過癮的啊啊啊啊！
     """
     print(messageSTR)
-    print(inputSubSTR[0])
-    print(inputSubSTR[1])
+    print("我的名字：{}".format(inputSubSTR[0]))
+    #print("我的名字：{}".format(myNameSTR))
+    print("我的學號：{}".format(inputSubSTR[1]))
+    #print("我的學號：{}".format(myIDSTR))
 
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
