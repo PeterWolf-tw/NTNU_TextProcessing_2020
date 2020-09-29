@@ -1,3 +1,5 @@
+#https://iecnknu.gitbooks.io/2019-nknu-happyprogrammer/content/jsonmo-zu-du-qu-yu-xie-ru-json-dang.html
+
 import json
 
 def textReadAndPrint(txtFILE):
@@ -27,7 +29,7 @@ if __name__ == "__main__":
     }
 
     jsonDICT["name"]["zh"] = txt.split("\n")[0].split(" ")[1]
-    #分隔txt檔第一行的第二組字串，不懂可以打開x檔看
+    #分隔txt檔第一行的第二組字串，不懂可以打開txt檔看
     jsonDICT["name"]["en"] = " ".join(txt.split("\n")[1].split(" ")[1:])
     jsonDICT["birth"]["year"] = txt.split("\n")[2].split(" ")[1]
     jsonDICT["birth"]["month"] = txt.split("\n")[2].split(" ")[3]
