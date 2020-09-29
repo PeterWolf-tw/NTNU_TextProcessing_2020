@@ -24,4 +24,8 @@ for matchNum, match in enumerate(matches, start=1):
         "education":content[5].replace("教育程度", "").strip().split("、"),
         "spouse":spouse[0]
     }
-    print(json.dumps(target, ensure_ascii=False))
+    with open("week03_40947026s.json", 'w') as f2:
+      f2.write(json.dumps(target, ensure_ascii=False) + '\n')
+    with open("week03_40947026s.json", 'r') as f3:
+      print([j.strip() for j in f3.readlines()][0])
+
