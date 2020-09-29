@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 import re
 import json
-
 
 with open("example/example.txt") as f:
   content = [i.strip() for i in f.readlines()]
@@ -24,4 +24,4 @@ for matchNum, match in enumerate(matches, start=1):
         "education":content[5].replace("教育程度", "").strip().split("、"),
         "spouse":spouse[0]
     }
-    print(json.dumps(target))
+    print(json.dumps(target, ensure_ascii=False))
