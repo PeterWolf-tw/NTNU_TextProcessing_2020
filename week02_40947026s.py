@@ -13,7 +13,7 @@ def main(inputSTR):
     超過癮的啊啊啊啊！
     """
     print(messageSTR)
-    owo = "李詳弘 40947026s"
+    #owo = "李詳弘 40947026s"
     print(owo[0:3])
     print(owo.split()[1])
 
@@ -21,4 +21,5 @@ def main(inputSTR):
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
 if __name__ == "__main__":
     nameSTR = "PeterWolf"
-    main(nameSTR)
+    owo = "李詳弘 40947026s"
+    main(owo)
