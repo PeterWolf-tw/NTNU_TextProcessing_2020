@@ -18,6 +18,8 @@ def jsonFileWriter(jsonDICT, jsonFileName):
 if __name__ == "__main__":
     txtFilePath = "./example/example.txt"
     txt = textReadAndPrint(txtFilePath)
+    print("txt檔：")
+    print(txt)
 
     jsonDICT = {
     "name": {"zh":"", "en":""}, #json
@@ -38,6 +40,7 @@ if __name__ == "__main__":
     jsonDICT["language"] = txt.split("\n")[4].split(" ")[1]
     jsonDICT["education"] = txt.split("\n")[5].split(" ")[1]
     jsonDICT["spouse"] = txt.split("\n")[6].split(" ")[1].split("（")[0]
+    print("json檔：")
     print(jsonDICT)
     jsonFileName = "week03_40621132L.json"
     jsonFileWriter(jsonDICT, jsonFileName)
