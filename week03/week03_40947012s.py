@@ -13,12 +13,12 @@ def jsonFileWriter(jsonDICT, jsonFileName):
     
     with open(jsonFileName, mode="w") as f:
         json.dump(jsonDICT, f, ensure_ascii = False)
-    
+    return None
 
 if __name__ == "__main__":
     txtFilePath = "./example/example.txt"
     txt = textReadAndPrint(txtFilePath)
-    print(txt)
+    #print(txt)
 
     jsonDICT = {
     "name": {"zh":"", "en":""},
