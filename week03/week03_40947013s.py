@@ -30,6 +30,7 @@ if __name__ == "__main__":
 
     jsonDICT["name"]["zh"]      = txt.split("\n")[0].split(" ")[1]
     jsonDICT["name"]["en"]      = " ".join(txt.split("\n")[1].split(" ")[1:])
+    
     jsonDICT["birth"]["year"]   = txt.split("\n")[2].split(" ")[1]
     jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
