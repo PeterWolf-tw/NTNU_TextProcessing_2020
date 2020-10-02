@@ -35,8 +35,8 @@ if __name__ == "__main__":
     jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
     jsonDICT["job"]             = txt.split("\n")[3].split("\t")[1]
-    jsonDICT["language"]        = txt.split("\n")[4].split(" ")
-    jsonDICT["education"]       = txt.split("\n")[5].split(" ")
+    jsonDICT["language"]        = txt.split("\n")[4][3:15].split("、")[:4]
+    jsonDICT["education"]       = txt.split("\n")[5][5:46].split("、")[:4]
     jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
 
    
