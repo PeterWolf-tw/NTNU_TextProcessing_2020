@@ -38,7 +38,7 @@ if __name__=="__main__":
     jsonDICT["spouse"] = txt.split("\n")[6].split(" ")[1].split("(")[0]
 
     print(jsonDICT)
-    jsonFileName = "week03_40571203h.json"
+    jsonFileName = "week03_40571203H.json"
     jsonFileWriter(jsonDICT, jsonFileName)
 
 
