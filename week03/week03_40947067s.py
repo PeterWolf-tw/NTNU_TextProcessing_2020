@@ -35,8 +35,8 @@ if __name__ == "__main__":
     jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
     jsonDICT["job"]             = txt.split("\n")[3].split("\t")[1]
-    jsonDICT["language"]        = txt.split("\n")[4].split(" ")
-    jsonDICT["education"]       = txt.split("\n")[5].split(" ")
+    jsonDICT["language"]        = txt.split("\n")[4][3:14].split("、")[0:4]
+    jsonDICT["education"]       = txt.split("\n")[5][5:46].split("、")[0:4]
     jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
 
     #上面這個區塊，有個地方讓電腦一直做一樣的事，似乎有讓它更有效率的寫法，不知道有沒有人想到呢？
