@@ -1,1 +1,6 @@
-{"name": {"zh": "¬_¨Îñü", "en": "Alice Ko"}, "birth": {"year": "1985", "month": "1", "date": "10"}, "job": "ºt­û", "language": ["»y¨¥", "°ê»y¡B»O»y¡B­^»y¡B¤é»y"], "education": ["±Ð¨|µ{«×", "¹ê½î¤j¾ÇÀ³¥Î¥~»y¾Ç¨t¸w·~¡B®õ¥_°ª¤¤¡B»O¥_¥«¥ßÄõ¶®°ê¥Á¤¤¾Ç¡B»O¥_¥«¤hªL°Ï«B¹A°ê¥Á¤p¾Ç"], "spouse": "ÁÂ©[¹F"}
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+= RESTART: D:\2020è¾°\109-1\Martedi æ–‡æœ¬åˆ†æž\NTNU_TextProcessing_2020\week03\week03 - 40784207I.py
+{'name': {'zh': 'æŸ¯ä½³å¬¿', 'en': 'Alice Ko'}, 'birth': {'year': '1985', 'month': '1', 'date': '10'}, 'job': 'æ¼”å“¡', 'language': ['èªžè¨€', 'åœ‹èªžã€è‡ºèªžã€è‹±èªžã€æ—¥èªž'], 'education': ['æ•™è‚²ç¨‹åº¦', 'å¯¦è¸å¤§å­¸æ‡‰ç”¨å¤–èªžå­¸ç³»è‚„æ¥­ã€æ³°åŒ—é«˜ä¸­ã€è‡ºåŒ—å¸‚ç«‹è˜­é›…åœ‹æ°‘ä¸­å­¸ã€è‡ºåŒ—å¸‚å£«æž—å€é›¨è¾²åœ‹æ°‘å°å­¸'], 'spouse': 'è¬å¤é”'}
+>>> 
