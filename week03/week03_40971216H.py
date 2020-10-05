@@ -17,6 +17,7 @@ def jsonFileWriter(jsonDICT, jsonFileName):
 if __name__ == "__main__":
     txtFilePath = "./example/example.txt"
     txt = textReadAndPrint(txtFilePath)
+    print(txt)
 
     jsonDICT = {
         "name": {"zh": "", "en": ""},
