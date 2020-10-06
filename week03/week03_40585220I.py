@@ -28,17 +28,16 @@ if __name__ == "__main__":
     "education":[],
     "spouse":""
     }
-
     jsonDICT["name"]["zh"]      = txt.split("\n")[0].split(" ")[1]
     jsonDICT["name"]["en"]      = " ".join(txt.split("\n")[1].split(" ")[1:])
     jsonDICT["birth"]["year"]   = txt.split("\n")[2].split(" ")[1]
     jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
     jsonDICT["job"]             = txt.split("\n")[3].split("\t")[1]
-    jsonDICT["language"]        = txt.split("\n")[4][3:15].split("、")[:4]
-    jsonDICT["education"]       = txt.split("\n")[5][5:46].split("、")[:4]
+    jsonDICT["language"]        = txt.split("\n")[4].split("、 ")
+    jsonDICT["education"]       = txt.split("\n")[5].split("、 ")
     jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
-
+    
    
     print(jsonDICT)
     jsonFileName = "week03_40585220I.json"
