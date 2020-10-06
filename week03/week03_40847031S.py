@@ -27,7 +27,7 @@ jDict["birth"]["date"] = data['出生'].split()[4]
 jDict["job"] = data['職業'][1]
 jDict["language"] = data['語言'].split('、')
 jDict["education"] = data['教育程度'].split("、")[:]
-jDict["spouse"] = data['教育程度'].split("（")[0]
+jDict["spouse"] = data['配偶'].split("（")[0]
 
 # write json file
 with open('./week03_40847031S.json', 'w', encoding='UTF-8') as f:
