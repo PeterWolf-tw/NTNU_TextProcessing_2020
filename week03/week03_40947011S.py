@@ -15,7 +15,7 @@ def jsonFileWriter(jsonDICT, jsonFileName):
     return None
 
 if __name__ == "__main__":
-    txtFilePath = "./example/example.txt"
+    txtFilePath = "C:/Users/beckx/OneDrive/桌面/python/text_analyse/week03_40947011S.json"
     txt = textReadAndPrint(txtFilePath)
     print("txt檔：")
     print(txt)
@@ -34,6 +34,15 @@ if __name__ == "__main__":
     jsonDICT["birth"]["year"] = txt.split("\n")[2].split(" ")[1]
     jsonDICT["birth"]["month"] = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"] = txt.split("\n")[2].split(" ")[5]
+    jsonDICT["job"] = txt.split("\n")[3].split("\t")[1]
+    jsonDICT["language"] = txt.split("\n")[4].split(" ")[1].split("、")
+    jsonDICT["education"] = txt.split("\n")[5].split(" ")[1].split("、")
+    jsonDICT["spouse"] = txt.split("\n")[6].split(" ")[1].split("（")[0]
+    print("json檔：")
+    print(jsonDICT)
+    jsonFileName = "week03_40947011S.json"
+    jsonFileWriter(jsonDICT, jsonFileName)
+
     jsonDICT["job"] = txt.split("\n")[3].split("\t")[1]
     jsonDICT["language"] = txt.split("\n")[4].split(" ")[1].split("、")
     jsonDICT["education"] = txt.split("\n")[5].split(" ")[1].split("、")
