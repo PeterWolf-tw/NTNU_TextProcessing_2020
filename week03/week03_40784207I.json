@@ -1,0 +1,6 @@
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+= RESTART: D:\2020辰\109-1\Martedi 文本分析\NTNU_TextProcessing_2020\week03\week03 - 40784207I.py
+{'name': {'zh': '柯佳嬿', 'en': 'Alice Ko'}, 'birth': {'year': '1985', 'month': '1', 'date': '10'}, 'job': '演員', 'language': ['語言', '國語、臺語、英語、日語'], 'education': ['教育程度', '實踐大學應用外語學系肄業、泰北高中、臺北市立蘭雅國民中學、臺北市士林區雨農國民小學'], 'spouse': '謝坤達'}
+>>> 

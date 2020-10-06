@@ -11,16 +11,17 @@ def textReadAndPrint(txtFILE):
 
 def jsonFileWriter(jsonDICT, jsonFileName):
     """轉換 jsonDICT 為 json 格式的檔案，並存檔。檔名由 jsonFileName 指定。"""
-    with open(jsonFileName, mode="w") as f:
+    with open(jsonFileName, mode="w", encoding="utf-8") as f:
         json.dump(jsonDICT, f, ensure_ascii=False)
     return None
-    
 
 if __name__ == "__main__":
     txtFilePath = "./example/example.txt"
     txt = textReadAndPrint(txtFilePath)
-    print(txt)
 
+    print("example.txt :")
+    print(txt)
+    
     jsonDICT = {
     "name": {"zh":"", "en":""},
     "birth": {"year":"", "month":"", "date":""},
@@ -32,17 +33,19 @@ if __name__ == "__main__":
 
     jsonDICT["name"]["zh"]      = txt.split("\n")[0].split(" ")[1]
     jsonDICT["name"]["en"]      = " ".join(txt.split("\n")[1].split(" ")[1:])
-    
     jsonDICT["birth"]["year"]   = txt.split("\n")[2].split(" ")[1]
     jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
     jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
     jsonDICT["job"]             = txt.split("\n")[3].split("\t")[1]
-    jsonDICT["language"]        = txt.split("\n")[4].split(" ")
-    jsonDICT["education"]       = txt.split("\n")[5].split(" ")
+    jsonDICT["language"]        = txt.split("\n")[4].split(" ")[1].split("、")
+    jsonDICT["education"]       = txt.split("\n")[5].split(" ")[1].split("、")
     jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
 
     #上面這個區塊，有個地方讓電腦一直做一樣的事，似乎有讓它更有效率的寫法，不知道有沒有人想到呢？
 
-    print(jsonDICT)
-    jsonFileName = "week03_40947013s.json"
+    jsonFileName = "week03_40647004S.json"
     jsonFileWriter(jsonDICT, jsonFileName)
+    
+    jsonfile = textReadAndPrint(jsonFileName)
+    print("week03_40647004S.json: ")
+    print(jsonfile)
