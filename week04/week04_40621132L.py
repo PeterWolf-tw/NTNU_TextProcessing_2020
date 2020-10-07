@@ -6,26 +6,19 @@ def openfile(txtFILE):
         txtSTR = f.read()
     return txtSTR
 
-#def wordcount(TUPLE):
-    #for i in range (len(TUPLE)):
-        #resultSTR = openfile(TUPLE[i])
+def wordcount(txtFILE):
+    resultSTR = openfile(txtFILE)
         
-        #xINT = resultSTR.count("婦人")
-        #yINT = resultSTR.count("土狗")
-        #zINT = resultSTR.count("男")
-        #countLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
-        #print(TUPLE[i].split("/")[1], ":", countLIST)
+    xINT = resultSTR.count("婦人")
+    yINT = resultSTR.count("土狗")
+    zINT = resultSTR.count("男")
+    countLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
+    return countLIST
     
 
 if __name__ == '__main__':
     txtfileTUPLE = ("example/dbp.txt","example/pbd.txt")
-    #wordcount(txtfileTUPLE)
-    
+
     for i in range (len(txtfileTUPLE)):
-        resultSTR = openfile(txtfileTUPLE[i])
-        
-        xINT = resultSTR.count("婦人")
-        yINT = resultSTR.count("土狗")
-        zINT = resultSTR.count("男")
-        countLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
+        countLIST = wordcount(txtfileTUPLE[i])
         print(txtfileTUPLE[i].split("/")[1], ":", countLIST)
