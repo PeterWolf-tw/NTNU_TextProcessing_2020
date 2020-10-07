@@ -21,6 +21,6 @@ def myfunction(inputSTR):
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
 if __name__ == "__main__":
-    nameSTR = "PeterWolf F123454321"
+    nameSTR = "溫嘉煒 40947057S"
 
     myfunction(nameSTR)
