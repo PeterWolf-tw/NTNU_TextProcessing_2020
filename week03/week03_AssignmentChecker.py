@@ -18,8 +18,12 @@ def week03JsonChecker(jsonFile):
         with open(jsonFile, encoding="utf-8") as f:
             jsonDICT = json.loads(f.read())
     except UnicodeDecodeError:
-        with open(jsonFile, encoding="big5") as f:
-            jsonDICT = json.loads(f.read())
+        try:
+            with open(jsonFile, encoding="big5") as f:
+                jsonDICT = json.loads(f.read())
+        except UnicodeDecodeError:
+            with open(jsonFile, encoding="gb") as f:
+                jsonDICT = json.loads(f.read())
 
     if jsonDICT == expectedDICT:
         return True
