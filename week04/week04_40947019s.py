@@ -13,4 +13,7 @@ if __name__=='__main__':
         zINT = resultSTR.count("男")
         dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
 
-        print(fileTUPLE[i].split("/")[1].split(".")[0]+':',format(dbpLIST).replace("\'","\""),sep='')
+
+        s=fileTUPLE[i].split("/")[1].split(".")[0]+':'
+
+        print(s,format(dbpLIST).replace("\'","\""),sep='')
