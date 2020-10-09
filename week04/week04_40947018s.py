@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-def main(txtFile):
+def read(txtFile):
     with open(txtFile, encoding="utf-8") as f:
         txtSTR = f.read()
     return txtSTR
@@ -9,18 +9,21 @@ def main(txtFile):
 
 
 if __name__=="main":
-    fileTUPLE = ("example\dbp.txt", "example\pbd.txt")
+    fileTUPLE = ("example/dbp.txt", "example/pbd.txt")
     
-    result = main(fileTUPLE[0])
+    resultSTR = read(fileTUPLE[0])
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
     zINT = resultSTR.count("男")
     dbpLIST = [("婦人", xINT),("土狗", yINT), ("男", zINT)]
     print(fileTUPLE[0].split("/")[1], dbpLIST)
     
-    resultSTR = main(fileTUPLE[1])
+    resultSTR = read(fileTUPLE[1])
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
     zINT = resultSTR.count("男")
     dbpLIST = [("婦人", xINT),("土狗", yINT), ("男", zINT)]
     print(fileTUPLE[1].split("/")[1], dbpLIST)
+    
+
+
