@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-def main(textFile):
+def main(txtFile):
     with open(txtFile, encoding="utf-8") as f:
         txtSTR = f.read()
     return txtSTR
