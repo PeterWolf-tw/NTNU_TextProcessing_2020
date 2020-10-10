@@ -13,7 +13,7 @@ if __name__=="__main__":
     dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
     print(fileTUPLE[0].spilt("/")[1], dbpLIST)
 
-    resultSTR = main(fileTUPLE[1])
+#   resultSTR = main(fileTUPLE[1])
 
 #    xINT = resultSTR.count("婦人")
 #    yINT = resultSTR.count("土狗")
