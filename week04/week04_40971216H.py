@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-def openfile(txtFILE):
+def of(txtFILE):
     with open (txtFILE, encoding="UTF-8") as f:
         txtSTR = f.read()
     return txtSTR
 
 def wordcount(txtFILE):
-    resultSTR = openfile(txtFILE)
+    resultSTR = of(txtFILE)
         
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
@@ -17,8 +17,8 @@ def wordcount(txtFILE):
     
 
 if __name__ == '__main__':
-    txtfileTUPLE = ("example/dbp.txt","example/pbd.txt")
+    txtfiles = ("example/dbp.txt","example/pbd.txt")
 
-    for i in range (len(txtfileTUPLE)):
-        countLIST = wordcount(txtfileTUPLE[i])
-        print(txtfileTUPLE[i].split("/")[1], ":", countLIST)
+    for i in range (len(txtfiles)):
+        countLIST = wordcount(txtfiles[i])
+        print(txtfiles[i].split("/")[1], ":", countLIST)
