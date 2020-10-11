@@ -7,8 +7,8 @@ def myfunction(inputSTR):
     '''
     print("Hello {}, {}".format(inputSTR, "你好"))
 
-    myNameSTR = inputSTR[0:9]
-    myIDSTR = inputSTR[10:20]
+    myNameSTR = inputSTR[0:3]
+    myIDSTR = inputSTR[4:20]
 
     print("我的名字:{}".format(myNameSTR))
     print("我的學號:{}".format(myIDSTR))
@@ -30,6 +30,6 @@ def myfunction(inputSTR):
 
 #程式進入點！ week02.py 這支程式從這裡開始「執行」！
 if __name__ == "__main__":
-    nameSTR = "PeterWolf F123454321"
+    nameSTR = "黃冠瑋 40976013H"
 
     myfunction(nameSTR)
