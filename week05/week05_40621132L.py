@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 def cCommandCoRefResolver(inputLIST, coRefKeySTR, personSTR):
-    #改編自ZH03.py，將inuSTR改為inuLIST
+    #改編自ZH03.py，將inputSTR改為inputLIST
     "給定要做消解的字串，利用 c-command 定理濾除不可能的人名，回傳可能的指代字串"
     "[注意]：這只是極度簡化，做為初步教學說明的版本！"
 
