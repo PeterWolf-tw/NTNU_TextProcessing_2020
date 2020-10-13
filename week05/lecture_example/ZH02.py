@@ -6,12 +6,12 @@ def coRefResolver(inputSTR, coRefKeySTR, personSTR):
     if coRefKeySTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     if personSTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     personSTRIndex = inputSTR.index(personSTR)
     coRefKeyIndex = inputSTR.index(coRefKeySTR)

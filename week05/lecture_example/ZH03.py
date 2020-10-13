@@ -8,12 +8,12 @@ def cCommandCoRefResolver(inputSTR, coRefKeySTR, personSTR):
     if coRefKeySTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     if personSTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     personSTRIndex = inputSTR.index(personSTR)
     if inputSTR[personSTRIndex+len(personSTR)] == "的":
@@ -32,12 +32,12 @@ def coRefResolver(inputSTR, coRefKeySTR, personSTR):
     if coRefKeySTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     if personSTR in inputSTR:
         pass
     else:
-        raise KeyError
+        raise ValueError
 
     personSTRIndex = inputSTR.index(personSTR)
     coRefKeyIndex = inputSTR.index(coRefKeySTR)
