@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 def coRefResolver(inputSTR, coRefKeySTR, personSTR):
-    "給定要做消解的字串，回傳可能的指代字串"
+    "給定要做消解的字串，回傳是否可能為指代字串"
     if coRefKeySTR in inputSTR:
         pass
     else:
