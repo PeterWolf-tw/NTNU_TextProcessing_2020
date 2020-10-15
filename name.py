@@ -8,10 +8,11 @@ def main(csvFILE):
     with open(csvFILE, encoding="big5") as f:
         csvSTR = f.read()
     csvLIST = csvSTR.split("\n")[1:-1]
+
     nameLIST = []
     while len(nameLIST)<=10:
         pickItem = random.choice(csvLIST)
-        if pickItem in nameLIST:
+        if pickItem.split(",")[1:] in nameLIST:
             pass
         else:
             nameLIST.append(pickItem.split(",")[1:])
