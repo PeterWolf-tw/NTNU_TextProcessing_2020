@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-
+   
 import json
 
 def textReadAndPrint(txtFILE):
+    """讀入指定的純文字 txtFILE 檔案路徑，並回傳該檔案的內容。"""
     with open(txtFILE, encoding="utf-8") as f:
-        txtContent = f.read()
-    return txtContent
+        textSTR = f.read()
+    print (textSTR)
+    return (textSTR)
 
 def jsonFileWriter(jsonDICT, jsonFileName):
+    """轉換 jsonDICT 為 json 格式的檔案，並存檔。檔名由 jsonFileName 指定。"""
     with open(jsonFileName, mode="w") as f:
         json.dump(jsonDICT, f, ensure_ascii=False)
     return None
@@ -36,6 +39,8 @@ if __name__ == "__main__":
     jsonDICT["education"]       = txt.split("\n")[5].split(" ")
     jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
 
+    #上面這個區塊，有個地方讓電腦一直做一樣的事，似乎有讓它更有效率的寫法，不知道有沒有人想到呢？
+
     print(jsonDICT)
-    jsonFileName = "week03_YourSchoolID.json"
-    jsonFileWriter(jsonDICT, jsonFileName)
+    jsonFileName = "week03_40671115H.json"
+    jsonFileWriter(jsonDICT, jsonFileName)    
