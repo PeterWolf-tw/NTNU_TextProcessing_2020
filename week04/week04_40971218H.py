@@ -31,3 +31,4 @@ if __name__== "__main__":
     zINT = resultSTR.count("男")
     dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
     print(fileTUPLE[1].split("/")[1], dbpLIST)
+    

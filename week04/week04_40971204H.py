@@ -2,12 +2,10 @@
 # -*- coding:utf-8 -*-
 
 
-
 def main(txtFILE):
     with open(txtFILE, encoding="utf-8") as f:
         txtSTR = f.read()
     return txtSTR
-
 
 
 

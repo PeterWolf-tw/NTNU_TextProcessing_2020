@@ -29,5 +29,5 @@ if __name__== "__main__":
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
     zINT = resultSTR.count("男")
-    dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
-    print(fileTUPLE[1].split("/")[1], dbpLIST)
+    pdbLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
+    print(fileTUPLE[1].split("/")[1], pdbLIST)

@@ -8,26 +8,13 @@ def main(txtFILE):
         txtSTR = f.read()
     return txtSTR
 
-
-
-
-
-
-
 if __name__== "__main__":
+ for i in range(2):
     fileTUPLE = ("example/dbp.txt", "example/pbd.txt")
-    resultSTR = main(fileTUPLE[0])
-
+    resultSTR = main(fileTUPLE[i])
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
     zINT = resultSTR.count("男")
     dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
-    print(fileTUPLE[0].split("/")[1], dbpLIST)
+    print(fileTUPLE[i].split("/")[1], dbpLIST)
 
-
-    resultSTR = main(fileTUPLE[1])
-    xINT = resultSTR.count("婦人")
-    yINT = resultSTR.count("土狗")
-    zINT = resultSTR.count("男")
-    dbpLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
-    print(fileTUPLE[1].split("/")[1], dbpLIST)
