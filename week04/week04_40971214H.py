@@ -18,5 +18,5 @@ if __name__ == "__main__":
     z = result.count("男")
     dbp = [("婦人", x), ("土狗", y), ("男", z)]
     pbd = [("婦人", x), ("土狗", y), ("男", z)]
-    print("dbp:",dbp,", pbd:", pbd)
+    print("ddp:",dbp,", pbd:", pbd)
   
