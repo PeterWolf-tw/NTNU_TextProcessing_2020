@@ -59,31 +59,31 @@ if __name__ == "__main__":
 
     resultBOOL = cCommandCoRefResolver(inputSTR, inputLIST[10], inputLIST[0])
     if resultBOOL == True:
-        coRefDICT["自己"].append("大雄")
+        coRefDICT[inputLIST[10]].append(inputLIST[0])
     elif resultBOOL == None:
         pass
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "靜香")
+    resultBOOL = cCommandCoRefResolver(inputSTR, inputLIST[10], inputLIST[6])
     if resultBOOL == True:
-        coRefDICT["自己"].append("靜香")
+        coRefDICT[inputLIST[10]].append(inputLIST[6])
     elif resultBOOL == None:
         pass
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "胖虎")
+    resultBOOL = cCommandCoRefResolver(inputSTR, inputLIST[10], inputLIST[2])
     if resultBOOL == True:
-        coRefDICT["自己"].append("胖虎")
+        coRefDICT[inputLIST[10]].append(inputLIST[2])
     elif resultBOOL == None:
         pass
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "妹妹")
+    resultBOOL = cCommandCoRefResolver(inputSTR, inputLIST[10], inputLIST[4])
     if resultBOOL == True:
-        coRefDICT["自己"].append("妹妹")
+        coRefDICT[inputLIST[10]].append(inputLIST[4])
     elif resultBOOL == None:
         pass
     else:

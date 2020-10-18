@@ -65,7 +65,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "靜香")
+    resultBOOL = cCommandCoRefResolver(inputSTR,inputLIST[10], inputLIST[6])
     if resultBOOL == True:
         coRefDICT["自己"].append("靜香")
     elif resultBOOL == None:
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "胖虎")
+    resultBOOL = cCommandCoRefResolver(inputSTR, inputLIST[10], inputLIST[2])
     if resultBOOL == True:
         coRefDICT["自己"].append("胖虎")
     elif resultBOOL == None:
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "妹妹")
+    resultBOOL = cCommandCoRefResolver(inputSTR,inputLIST[10], inputLIST[4])
     if resultBOOL == True:
         coRefDICT["自己"].append("妹妹")
     elif resultBOOL == None:
