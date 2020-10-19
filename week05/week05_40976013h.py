@@ -5,17 +5,17 @@ def cCommandCoRefResolver(inputSTR, coRefKeySTR, personSTR):
     "給定要做消解的字串，利用 c-command 定理濾除不可能的人名，回傳可能的指代字串"
     "[注意]：這只是極度簡化，做為初步教學說明的版本！"
 
-    if coRefKeySTR in inputSTR:
+    if coRefKeySTR in inputLIST:
         pass
     else:
         raise ValueError
 
-    if personSTR in inputSTR:
+    if personSTR in inputLIST:
         pass
     else:
         raise ValueError
 
-    personSTRIndex = inputSTR.index(personSTR)
+    personSTRIndex = inputLIST.index(personSTR)
     if inputSTR[personSTRIndex+len(personSTR)] == "的":
         return None
     elif inputSTR[personSTRIndex+len(personSTR)] == "之":
@@ -23,26 +23,26 @@ def cCommandCoRefResolver(inputSTR, coRefKeySTR, personSTR):
     else:
         pass
 
-    coRefKeyIndex = inputSTR.index(coRefKeySTR)
+    coRefKeyIndex = inputLIST.index(coRefKeySTR)
     if coRefKeyIndex > personSTRIndex:
         return True
     else:
         return False
 
-def coRefResolver(inputSTR, coRefKeySTR, personSTR):
+def coRefResolver(inputLIST, coRefKeySTR, personSTR):
     "給定要做消解的字串，回傳是否可能為指代字串"
-    if coRefKeySTR in inputSTR:
+    if coRefKeySTR in inputLIST:
         pass
     else:
         raise ValueError
 
-    if personSTR in inputSTR:
+    if personSTR in inputLIST:
         pass
     else:
         raise ValueError
 
-    personSTRIndex = inputSTR.index(personSTR)
-    coRefKeyIndex = inputSTR.index(coRefKeySTR)
+    personSTRIndex = inputLIST.index(personSTR)
+    coRefKeyIndex = inputLIST.index(coRefKeySTR)
     if coRefKeyIndex > personSTRIndex:
         return True
     else:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "靜香")
+    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "靜香")
     if resultBOOL == True:
         coRefDICT["自己"].append("靜香")
     elif resultBOOL == None:
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "胖虎")
+    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "胖虎")
     if resultBOOL == True:
         coRefDICT["自己"].append("胖虎")
     elif resultBOOL == None:
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = cCommandCoRefResolver(inputSTR, "自己", "妹妹")
+    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "妹妹")
     if resultBOOL == True:
         coRefDICT["自己"].append("妹妹")
     elif resultBOOL == None:
