@@ -15,7 +15,6 @@ def wordcount(txtFILE):
     countLIST = [("婦人", xINT), ("土狗", yINT), ("男", zINT)]
     return countLIST
     
-
 if __name__ == '__main__':
     txtfileTUPLE = ("example/dbp.txt","example/pbd.txt")
 

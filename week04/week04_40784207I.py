@@ -4,18 +4,14 @@
 
 
 def main(txtFILE):
-    with open(txtFILE, encoding="utf-8") as f:
-        txtSTR = f.read()
+    with open(txtFILE, encoding="utf-8") as F:
+        txtSTR = F.read()
     return txtSTR
-
-
-
-
-
 
 
 if __name__== "__main__":
     fileTUPLE = ("example/dbp.txt", "example/pbd.txt")
+    
     resultSTR = main(fileTUPLE[0])
 
     xINT = resultSTR.count("婦人")
@@ -26,6 +22,7 @@ if __name__== "__main__":
 
 
     resultSTR = main(fileTUPLE[1])
+    
     xINT = resultSTR.count("婦人")
     yINT = resultSTR.count("土狗")
     zINT = resultSTR.count("男")
