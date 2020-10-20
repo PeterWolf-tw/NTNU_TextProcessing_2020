@@ -52,9 +52,10 @@ if __name__ == "__main__":
     #inputSTR = "大雄知道靜香喜歡的是自己 "
     #inputSTR = "大雄聽胖虎說靜香愛的是自己 "
     inputSTR = "大雄聽胖虎的妹妹說靜香愛的是自己"
+    inputLIST = ["大雄", "聽", "胖虎", "的", "妹妹", "說", "靜香", "愛", "的", "是", "自己"]
     coRefDICT = {"自己":[]}
 
-    resultBOOL = coRefResolver(inputSTR, "自己", "大雄")
+    resultBOOL = coRefResolver(inputSTR, inputLIST[10], inputLIST[0])
     if resultBOOL == True:
         coRefDICT["自己"].append("大雄")
     elif resultBOOL == None:
@@ -62,7 +63,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = coRefResolver(inputSTR, "自己", "靜香")
+    resultBOOL = coRefResolver(inputSTR, inputLIST[10], inputLIST[6])
     if resultBOOL == True:
         coRefDICT["自己"].append("靜香")
     elif resultBOOL == None:
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = coRefResolver(inputSTR, "自己", "胖虎")
+    resultBOOL = coRefResolver(inputSTR, inputLIST[10], inputLIST[2])
     if resultBOOL == True:
         coRefDICT["自己"].append("胖虎")
     elif resultBOOL == None:
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     else:
         pass
 
-    resultBOOL = coRefResolver(inputSTR, "自己", "妹妹")
+    resultBOOL = coRefResolver(inputSTR, inputLIST[10], inputLIST[4])
     if resultBOOL == True:
         coRefDICT["自己"].append("妹妹")
     elif resultBOOL == None:
