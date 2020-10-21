@@ -3,7 +3,7 @@
 
 
 def sentence2LIST_v1(inputSTR):
-    for item in ("「", "，", "、", "…", "」", "。"):
+    for item in ("「", "，", "…", "」", "。"):
         inputSTR = inputSTR.replace(item, item+"<My_Cutting_Mark>")
     resultLIST = inputSTR.split("<My_Cutting_Mark>")
     return resultLIST
