@@ -15,7 +15,11 @@ def text2Sentence(inputSTR):
         inputSTR=inputSTR.replace(item,'<Cutting_Mark>')
         
     for i in range(len(inputSTR)):
+<<<<<<< HEAD
+        if inputSTR[i] == "," and inputSTR[i-1] not in ['0','1','2','3','4','5','6','7','8','9']:
+=======
         if inputSTR[i] == "," and inputSTR[i-1] == "元":
+>>>>>>> master
             inputSTR = inputSTR[:i] + "<Cutting_Mark>" +inputSTR[i+1:]
         if inputSTR[i] == "。" and i != len(inputSTR)-1:
             inputSTR = inputSTR[:i] +"<Cutting_Mark>" +inputSTR[i+1:]
