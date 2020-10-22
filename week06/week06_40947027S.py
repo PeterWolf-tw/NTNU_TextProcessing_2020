@@ -11,7 +11,7 @@ def text2Sentence(inputStr):
     for i in ('、', '，'):
         inputStr = inputStr.replace(i, '<Split_Mark>')
     for i in range(len(inputStr)):
-        if inputStr[i] == ',' and inputStr[i-1] in ['元']:
+        if inputStr[i] == ',' and inputStr[i-1] not in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
             inputStr = inputStr[:i] + '<Split_Mark>' + inputStr[i+1:]
         if inputStr[i] == '。' and i != len(inputStr)-1:
             inputStr = inputStr[:i] + '<Split_Mark>' + inputStr[i+1:]
