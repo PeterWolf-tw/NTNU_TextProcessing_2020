@@ -44,14 +44,14 @@ if __name__== "__main__":
 
     #將讀出來的內容字串傳給 [將字串轉為「句子」 列表」]的程式，存為 newsLIST
     newsLIST = text2Sentence(newsSTR)
-    print(newsLIST)
+    print("newsLIST: ", newsLIST)
 
     #設定要讀取的 test.json 路徑
     jsonFilePath2 = "./example/test.json"
 
     #將 test.json 的 sentenceLIST 內容讀出，存為 testLIST
     testLIST = jsonTextReader(jsonFilePath2)["sentence"]
-    print(testLIST)
+    print("testLIST: ", testLIST)
 
     #測試是否達到作業需求
     if newsLIST == testLIST:
