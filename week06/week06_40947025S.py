@@ -32,7 +32,6 @@ def text2Sentence(inputSTR):
     inputList = inputSTR.split("MyCurringMark")
     while "" in inputList:
         inputList.remove("")
-    inputList[-1] = inputList[-1] + "。"
     return inputList
 
 
@@ -63,4 +62,3 @@ if __name__== "__main__":
         print("作業過關！")
     else:
         print("作業不過關，請回到上面修改或是貼文求助！")
-    
