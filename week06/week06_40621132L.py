@@ -11,7 +11,7 @@ def jsonTextReader(jsonFilePath):
 
 #將字串轉為「句子」列表的程式
 def text2Sentence(inputSTR):
-    for item in ("，", "、", "."):
+    for item in ("，", "、", ".", "。"):
         inputSTR = inputSTR.replace(item, "{}".format("#"))
         #inputSTR = inputSTR.replace(item, "#")
 
@@ -20,18 +20,24 @@ def text2Sentence(inputSTR):
             pass
         elif inputSTR[i] == ",":
             inputSTR = inputSTR[:i] + "#" +inputSTR[i+1:]
-            
-        if inputSTR[i] == "。" and i != len(inputSTR)-1:
-            inputSTR = inputSTR[:i] +"#" +inputSTR[i+1:]
-        elif inputSTR[i] == "。" and i == len(inputSTR)-1:
-            inputSTR = inputSTR[:i] 
+        
+        #移除切割最後一個句點剩下的空格方法1
+        #if inputSTR[i] == "。" and i != len(inputSTR)-1:
+            #inputSTR = inputSTR[:i] +"#" +inputSTR[i+1:]
+        #elif inputSTR[i] == "。" and i == len(inputSTR)-1:
+            #inputSTR = inputSTR[:i]         
         
     while "###" in inputSTR:
         inputSTR = inputSTR.replace("###", "")
     while "…" in inputSTR:
         inputSTR = inputSTR.replace("…", "")
         
-    inputLIST = inputSTR.split("#")    
+    inputLIST = inputSTR.split("#")
+    
+    #移除切割最後一個句點剩下的空格方法2
+    while "" in inputLIST:
+        inputLIST.remove("")
+    
         
     return inputLIST
         
