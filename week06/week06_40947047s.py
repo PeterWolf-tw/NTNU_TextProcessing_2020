@@ -34,7 +34,7 @@ if __name__== "__main__":
 
     #將讀出來的內容字串傳給 [將字串轉為「句子」 列表」]的程式，存為 newsLIST
     newsLIST=text2Sentence(inputSTR)[:-1]
-    print(newsLIST)
+    #print(newsLIST)
     #設定要讀取的 test.json 路徑
     filePath_test="./example/test.json"
 
