@@ -31,8 +31,6 @@ if __name__ == "__main__":
     jsonFilePath = "./example/test.json"
     testLIST = jsonTextReader(jsonFilePath)
 
-    print(newsLIST)
-
     if newsLIST == testLIST:
         print("作業過關！")
     else:
