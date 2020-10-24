@@ -18,8 +18,6 @@ def text2Sentence(inputSTR):
     for item in("、","，","。"):
         inputSTR=inputSTR.replace(item,"<My Cutting Mark>")
     for i in range(len(inputSTR)):
-#        if inputSTR[i]==',' and inputSTR[i-1] =="5":
-#            inputSTR = inputSTR[:i-1] + "<My Cutting Mark>" + inputSTR[i:]
         if inputSTR[i]==',' and inputSTR[i-1] not in ['0','1','2','3','4','5','6','7','8','9']:
             inputSTR = inputSTR[:i] + "<My Cutting Mark>" + inputSTR[i+1:]
 #        if inputSTR[i] == "。" and i != len(inputSTR)-1:
