@@ -25,7 +25,7 @@ if __name__ == "__main__":
   #將 news.json 利用 [讀取 json] 的程式打開
   #將讀出來的內容字串傳給 [將字串轉為「句子」 列表」]的程式，存為 newsLIST
   newsLIST = text2Sentence(jsonTextReader(newsJsonPath)["text"])
-
+  print(newsLIST)
   #設定要讀取的 test.json 路徑
   testJsonPath = "./example/test.json"
 
