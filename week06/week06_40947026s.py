@@ -13,7 +13,7 @@ def jsonTextReader(jsonFilePath):
 #將字串轉為「句子」列表的程式
 def text2Sentence(inputSTR):
   separatorRegexp = r'(。(?!$)|，|、|(?<![0-9]),(?![0-9])|(?<![0-9]),(?!\D))'
-  text = re.sub(r'(…|\...)', '', inputSTR)
+  text = re.sub(r'(…|\...|。$)', '', inputSTR)
   text = re.sub(separatorRegexp, '###', text)
   return text.split('###')
 
