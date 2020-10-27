@@ -13,6 +13,7 @@ def sentence2LIST_v2(inputSTR):
     for item in ("「", "，", "、", "…", "」", "。", "."):
         inputSTR = inputSTR.replace(item, item+"<My_Cutting_Mark>")
 
+    print(inputSTR)
     while ".<My_Cutting_Mark>.<My_Cutting_Mark>.<My_Cutting_Mark>" in inputSTR:
         inputSTR = inputSTR.replace(".<My_Cutting_Mark>.<My_Cutting_Mark>.<My_Cutting_Mark>", "...<My_Cutting_Mark>")
     resultLIST = inputSTR.split("<My_Cutting_Mark>")
