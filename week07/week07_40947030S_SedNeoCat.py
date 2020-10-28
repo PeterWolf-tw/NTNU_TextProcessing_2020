@@ -12,7 +12,7 @@ def jsonTextExtract(jsonPath, textKey):
 
 
 def text2Sentence(inputSTR):
-    for item in ("、", "，", "。", "「", "」", "/", "／"):
+    for item in ("、", "，", "。", "「", "」", "/", "／", "(", ")", "（", "）"):
         inputSTR = inputSTR.replace(item, '<cutting mark>')
     for item in ("...", "…"):
         inputSTR = inputSTR.replace(item, '')
