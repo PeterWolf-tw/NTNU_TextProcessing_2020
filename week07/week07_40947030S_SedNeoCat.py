@@ -6,7 +6,7 @@ import os
 
 
 def jsonTextExtract(jsonPath, textKey):
-    with open(jsonPath) as f:
+    with open(jsonPath, encoding='UTF-8') as f:
         jsonObj = json.load(f)
     return jsonObj[textKey]
 
