@@ -14,6 +14,7 @@ def text2cws(folderName):
     
     resultLIST = []
     sentenceLIST = []
+    joinLIST = []
     for file in os.listdir(folderName):
         jsonFilePath = folderName + "/" + file
         
@@ -49,9 +50,12 @@ def text2cws(folderName):
     
     for s in sentenceLIST:
         resultLIST.append("/".join(jieba.cut(s)))  
-    #print(resultLIST)
+    print(resultLIST)
     
-    joinLIST = "".join(resultLIST).split("/")
+    for i in resultLIST:
+        splitLIST = i.split("/")
+        joinLIST.extend(splitLIST)
+    
     print(joinLIST)
     return joinLIST
 
