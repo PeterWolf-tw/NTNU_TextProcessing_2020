@@ -50,13 +50,13 @@ def text2cws(folderName):
     
     for s in sentenceLIST:
         resultLIST.append("/".join(jieba.cut(s)))  
-    print(resultLIST)
+    #print(resultLIST)
     
     for i in resultLIST:
         splitLIST = i.split("/")
         joinLIST.extend(splitLIST)
     
-    print(joinLIST)
+    #print(joinLIST)
     return joinLIST
 
 #設計一個名為 termFreq() 的程式，承接 text2cws() 的回傳值，並
