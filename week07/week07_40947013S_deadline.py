@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-
-import json, jieba, os
+import json,jieba, os
 def text2cws(jsonFilePath):
     with open(jsonFilePath,'r',encoding="utf-8") as f:
         result=json.load(f)
@@ -22,28 +21,27 @@ def text2cws(jsonFilePath):
         return readList
 
 def termFreq(jList):
-    resultDICT = {}
+    tempDict = {}
     for k in jList:
-        if k not in resultDICT:
-            resultDICT[k] = 1
-        else
-            resultDICT[k] +=1
-    return resultDICT 
-
+        if k in tempDict:
+            tempDict[k] += 1
+        else:
+            tempDict[k] =1
+    return tempDict
 
 
 if __name__=='__main__':
     files =("./example/health","./example/finance")
-     resultDict = [{}, {}]
+    resultDict = [{}, {}]
     for l in range(len(files)) :
-        RList =[]
-        for m in os.listdir(files[l]):
-            RList.extend(text2cws(files[l] + '/' + m))
-        resultDict[l] = termFreq(RList)
-    for n in resultDICT:
-        print(l)
+        forTermList = []
+        dirs = os.listdir(files[l])
+        for m in dirs:
+            forTermList.extend(text2cws(files[l] + '/' + m))
+        resultDict[l] = termFreq(forTermList)
+    for l in resultDict:
+        print(l)       
         
-
 
    
     
