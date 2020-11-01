@@ -1,92 +1,51 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-def cCommandCoRefResolver(inputLIST, coRefKeySTR, personSTR):
-    "給定要做消解的字串，利用 c-command 定理濾除不可能的人名，回傳可能的指代字串"
-    "[注意]：這只是極度簡化，做為初步教學說明的版本！"
+import json
 
-    if coRefKeySTR in inputLIST:
-        pass
-    else:
-        raise ValueError
+def textReadAndPrint(txtFILE):
+    """讀入指定的純文字 txtFILE 檔案路徑，並回傳該檔案的內容。"""
+    with open(txtFILE, encoding="utf-8") as f:
+        txtContent = f.read()
+    return txtContent
 
-    if personSTR in inputLIST:
-        pass
-    else:
-        raise ValueError
-
-    personSTRIndex = inputLIST.index(personSTR)
-    if inputLIST[personSTRIndex+1] == "的":
-        return None
-    elif inputLIST[personSTRIndex+1] == "之":
-        return None
-    else:
-        pass
-
-    coRefKeyIndex = inputLIST.index(coRefKeySTR)
-    if coRefKeyIndex > personSTRIndex:
-        return True
-    else:
-        return False
-
-def coRefResolver(inputLIST, coRefKeySTR, personSTR):
-    "給定要做消解的字串，回傳是否可能為指代字串"
-    if coRefKeySTR in inputLIST:
-        pass
-    else:
-        raise ValueError
-
-    if personSTR in inputLIST:
-        pass
-    else:
-        raise ValueError
-
-    personSTRIndex = inputLIST.index(personSTR)
-    coRefKeyIndex = inputLIST.index(coRefKeySTR)
-    if coRefKeyIndex > personSTRIndex:
-        return True
-    else:
-        return False
+def jsonFileWriter(jsonDICT, jsonFileName):
+    """轉換 jsonDICT 為 json 格式的檔案，並存檔。檔名由 jsonFileName 指定。"""
+    with open(jsonFileName, mode="w", encoding="utf-8") as f:
+        json.dump(jsonDICT, f, ensure_ascii=False)
+    return None
 
 if __name__ == "__main__":
+    txtFilePath = "./example/example.txt"
+    txt = textReadAndPrint(txtFilePath)
+    print("example.txt: ")
+    print(txt)
+    print()
 
-    #inputSTR = "小夫告訴大雄其實靜香喜歡的是他 "
-    #inputSTR = "大雄知道靜香喜歡的是自己 "
-    #inputSTR = "大雄聽胖虎說靜香愛的是自己 "
-    inputSTR = "大雄聽胖虎的妹妹說靜香愛的是自己"
-    inputLIST = ["大雄", "聽", "胖虎", "的", "妹妹", "說", "靜香", "愛", "的", "是", "自己"]
-    coRefDICT = {inputLIST[10]:[]}
+    jsonDICT = {
+    "name": {"zh":"", "en":""},
+    "birth": {"year":"", "month":"", "date":""},
+    "job": "",
+    "language":[],
+    "education":[],
+    "spouse":""
+    }
 
-    resultBOOL = cCommandCoRefResolver(inputLIST, inputLIST[10], inputLIST[0])
-    if resultBOOL == True:
-        coRefDICT["自己"].append("大雄")
-    elif resultBOOL == None:
-        pass
-    else:
-        pass
+    jsonDICT["name"]["zh"]      = txt.split("\n")[0].split(" ")[1]
+    jsonDICT["name"]["en"]      = " ".join(txt.split("\n")[1].split(" ")[1:])
+    jsonDICT["birth"]["year"]   = txt.split("\n")[2].split(" ")[1]
+    jsonDICT["birth"]["month"]  = txt.split("\n")[2].split(" ")[3]
+    jsonDICT["birth"]["date"]   = txt.split("\n")[2].split(" ")[5]
+    jsonDICT["job"]             = txt.split("\n")[3].split("\t")[1]
+    jsonDICT["language"]        = txt.split("\n")[4].split(" ")[1].split("、")
+    jsonDICT["education"]       = txt.split("\n")[5].split(" ")[1].split("、")
+    jsonDICT["spouse"]          = txt.split("\n")[6].split(" ")[1].split("（")[0]
 
-    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "靜香")
-    if resultBOOL == True:
-        coRefDICT["自己"].append("靜香")
-    elif resultBOOL == None:
-        pass
-    else:
-        pass
+    #上面這個區塊，有個地方讓電腦一直做一樣的事，似乎有讓它更有效率的寫法，不知道有沒有人想到呢？
 
-    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "胖虎")
-    if resultBOOL == True:
-        coRefDICT["自己"].append("胖虎")
-    elif resultBOOL == None:
-        pass
-    else:
-        pass
+    jsonFileName = "week03_40647003S.json"
+    jsonFileWriter(jsonDICT, jsonFileName)
 
-    resultBOOL = cCommandCoRefResolver(inputLIST, "自己", "妹妹")
-    if resultBOOL == True:
-        coRefDICT["自己"].append("妹妹")
-    elif resultBOOL == None:
-        pass
-    else:
-        pass
-
-    print(coRefDICT)
+    JF = textReadAndPrint(jsonFileName)
+    print("week03_40647003S.json: ")
+    print(JF)
