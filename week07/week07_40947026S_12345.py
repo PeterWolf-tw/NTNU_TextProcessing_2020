@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-import json, re, jieba
+import json, jieba
 from pathlib import Path
 from collections import Counter
 
