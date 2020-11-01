@@ -56,13 +56,15 @@ def termFreq(inputLIST):
 if __name__ == "__main__":
     jsonfile = ("./example/health/ ", "./example/finance/")
     fileList = os.listdir(jsonfile[0])
-    
+    inputList = []
     for jsonfilepath in fileList:
-        resultDICT = termFreq(text2cws(jsonfilepath))
+        inputList = inputList + text2cws(jsonfilepath)    
+    resultDICT = termFreq(inputList)
     
     fileList = os.listdir(jsonfile[1])
-        
+    inputList = []    
     for jsonfilepath in fileList:
-        resultDICT = termFreq(text2cws(jsonfilepath))    
+        inputList = inputList + text2cws(jsonfilepath)
+    resultDICT = termFreq(inputList)    
     
     
