@@ -1,26 +1,50 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+import os, jieba, sys
+sys.path.insert(0,'.\GitHub\NTNU_TextProcessing_2020\week06')
+sys.path.append('.\GitHub\NTNU_TextProcessing_2020\week06')
+from week06_40706219E.import jsonTextReader
 
-import json
+
 #讀取 json 檔案，並以 jieba 斷詞處理其內容中 "BODY" 欄位的程式
-
 #[註] 上週才寫過「讀取 json 的檔案，其實可以把它複製過來使用哦！
 #這麼一來， "讀取 json" 的功能就不用重寫了。只要把檔案丟給上週的
 #程式，取得回傳的值，再接著寫就好了。
 
 
-def termFreq(List):
-    
-    for x in List:
-        if x in  :
-            
-        else :
-            
-    return
+def text2cws(jsonFilePath):
+    FileNames = os.listdir(jsonFilePath)
+    List2 = []
+    for y in FileNames:
+        TSTR = []
+        inputSTR = jsonTextReader(jsonFilePath + "/" + str(y))["BODY"]
+        BlankMark = ["3、", "2、", "1、", "、", "【", "】", " ", "「", "」"]
+        CutMark = [",", "，", "。", "／", "；", "（", "(", "）", ")", "？", "-", "！", "：", ":", "1.", "2.", "3.", "4."]
+        LastMark = ["<CUT><CUT><CUT>", "<CUT><CUT>"]
+        for j in BlankMark:
+            inputSTR = inputSTR.replace(j, "")
+        for i in CutMark:
+            if inputSTR.find(":00") != -1:
+                inputSTR = inputSTR.replace(":00", "<R>")
+            inputSTR = inputSTR.replace(i, "<CUT>")
+        for k in LastMark:
+            inputSTR = inputSTR.replace(k, "<CUT>")
+        inputSTR = inputSTR.replace("<R>", ":00")
+        inputSTR = inputSTR[:-5]
+        TSTR.append(inputSTR.split("<CUT>"))
+        for s in TSTR:
+            for l in s:
+                List2 = List2 + list(jieba.cut(l))
+    return List2
 
-def text2cws():
-    
-    return 
+def termFreq(List):
+    DICT = {}
+    for x in List:
+        if DICT.get(x) == None:
+             DICT[x] = List.count(x)
+    return DICT
+
+
 
 
 
@@ -33,7 +57,9 @@ def text2cws():
 #resultDICT = {"斷詞": 2, "不要": 2, "結巴": 1, "結結巴巴": 1}
 
 if __name__ == "__main__":
-    path = path("./example/health/")
+    jsonFilePath = ("./example/health/" , "example/finance")
+    BodyDict_health = termFreq(text2cws(jsonFilePath[0]))
+    BodyDict_finance = termFreq(text2cws(jsonFilePath[1]))    
 
 
 #設計一程式進入點，讀取 example/health/ 中所有檔案，然後將檔案路徑
