@@ -2,7 +2,11 @@
 # -*-coding:utf8 -*-
 import re
 def nameMail(inputSTR):
-    ResultLIST=re.findall(r"(?<=\)).+?(?= )|(?<=\d ).+?(?= \(\d)",inputSTR)
+    FindLIST=re.findall(r"(?<=\(\d\))(.+?)(?=\s\w).+?(\w+@\w+\.com)",inputSTR)
+    ResultLIST=[]
+    for i in FindLIST:
+        ResultLIST.append(i[0])
+        ResultLIST.append(i[1])
     return ResultLIST
 if __name__ == "__main__":
     inputSTR="(1)黃至瑜 40947012S 資工113 selina221947@gmail.com (2)孫韻婷 40947013S 資工113 melodysun90@gmail.com (3)彭安慈 40947019S 資工113 anci.peng@gmail.com (4)林彤頤 40947036S 資工113 walker2sunny@gmail.com (5)丁語婕 40947067S 資工112 sarah30135@gmail.com"
