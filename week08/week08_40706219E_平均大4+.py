@@ -7,7 +7,7 @@ def nameMail(inputSTR):
     resultLIST = []
     tempLIST = []
     pat_name = re.compile("(?<=\(Neu\)  \(WHITESPACE\) ).+?(?=\(Nb\))|(?<=\(Cbb\)  \(WHITESPACE\) ).+?(?=\(Nb\))")
-    pat_email = re.compile("((?<=\(Na\) \d{3}).+?(?=\,)|(?<=\(Na\) \d{3} ).+?(?=\,)|(?<=\(VD\) \d{3}).+?(?=\\n))")
+    pat_email = re.compile("((?<=\(Na\) \d{3} ).+?(?=\(Neu\) \,)|(?<= \d{3}\(Neu\) ).+?(?=\(FW\) \,)|(?<=\(Na\) \d{3} ).+?(?=\(FW\) \,)|(?<=\(VD\) \d{3} ).+?(?= \\n))")
 
     tempLIST.append([n.group(0) for n in pat_name.finditer(inputSTR)])
     tempLIST.append([e.group(1) for e in pat_email.finditer(inputSTR)])
