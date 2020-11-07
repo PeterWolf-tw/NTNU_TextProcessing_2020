@@ -65,6 +65,3 @@ if __name__ == "__main__":
 #設計一程式進入點，讀取 example/health/ 中所有檔案，然後將檔案路徑
 #傳給 text2cws()，取得內容後，再傳給 termFreq()。
 #完成後，對 example/finance/ 中的所有檔案做一樣的操作。
-
-
-

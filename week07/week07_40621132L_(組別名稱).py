@@ -14,7 +14,6 @@ def text2cws(folderName):
     
     resultLIST = []
     sentenceLIST = []
-    joinLIST = []
     for file in os.listdir(folderName):
         jsonFilePath = folderName + "/" + file
         
@@ -52,11 +51,8 @@ def text2cws(folderName):
         resultLIST.append("/".join(jieba.cut(s)))  
     #print(resultLIST)
     
-    for i in resultLIST:
-        splitLIST = i.split("/")
-        joinLIST.extend(splitLIST)
-    
-    #print(joinLIST)
+    joinLIST = "".join(resultLIST).split("/")
+    print(joinLIST)
     return joinLIST
 
 #設計一個名為 termFreq() 的程式，承接 text2cws() 的回傳值，並
@@ -65,9 +61,9 @@ def text2cws(folderName):
 #共出現的次數。
 #e.g., 文章01 = "斷詞不要結巴"。文章02 = "斷詞不要結結巴巴"，則
 #resultDICT = {"斷詞": 2, "不要": 2, "結巴": 1, "結結巴巴": 1}
-def termFreq(joinList):
+def termFreq(List):
     tempDict = {}
-    for i in joinList:
+    for i in List:
         if i in tempDict:
             tempDict[i] = tempDict[i] + 1
         else:

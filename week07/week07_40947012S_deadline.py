@@ -4,6 +4,12 @@
 import json,jieba,os
 def text2cws(jsonFilePath):
     with open(jsonFilePath,'r',encoding="utf-8") as f:
+<<<<<<< HEAD
+        js=json.load(f.read())
+    inputSTR = js["BODY"]
+     for item in("…","..."):
+     inputSTR=inputSTR.replace(item,"")
+=======
         js=json.load(f)
     inputSTR = js["BODY"]
 
@@ -42,3 +48,4 @@ if __name__=="__main__":
         strDICT[i] = termFreq(forTermList)
     for i in strDICT:
         print(i)
+>>>>>>> d62fe236f722aa5ecf7c5ee7427360d22db3d4fd
