@@ -23,7 +23,7 @@ if __name__ == "__main__":
 (2) 何明曦 40947029S 資工113 seanho12345@gmail.com
 (3) 郭泰維 40847031S 資工113 511359@stu.tnssh.tn.edu.tw
 (4) 李紀為 40947033S 資工113 wiki900625@gmail.com
-(5) 蕭文政 40947011A 資工113 Beckxiao2001323@gmail.com"""
+(5) 蕭文政 40947011S 資工113 Beckxiao2001323@gmail.com"""
 
   resultLIST = nameMail(inputSTR)
   print(resultLIST)
