@@ -13,9 +13,12 @@ def writeJson():
     pass
 
 if __name__ == "__main__":
-    tourblogContent = readJson("./example/tourblog.json")
+    tourblogContent = readJson("../example/tourblog.json")
     articut = ArticutAPI.Articut()
     resultDict = articut.parse(tourblogContent, level = "lv2")
+    print(resultDict)
+    '''
     locList = articut.getLocationStemLIST(resultDict)
     resultDict = articut.parse(tourblogContent, openDataPlaceAccessBOOL = True)
     plaList = articut.getOpenDataPlaceLIST(resultDict)
+    '''
