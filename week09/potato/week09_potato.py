@@ -40,17 +40,17 @@ if __name__== "__main__":
     #tourblog.json
     tourblogJsonFile = '../example/tourblog.json'
     tourblogText = jsonTextReader(tourblogJsonFile)['content']
-    resultDict = articut.parse(tourblogText, level = "lv2")
-    locList = articut.getLocationStemLIST(resultDict)
-    resultDict = articut.parse(tourblogText, openDataPlaceAccessBOOL = True)
-    plaList = articut.getOpenDataPlaceLIST(resultDict)
+    tourblogDict = articut.parse(tourblogText, level = "lv2")
+    locList = articut.getLocationStemLIST(tourblogDict)
+    tourblogDict = articut.parse(tourblogText, openDataPlaceAccessBOOL = True)
+    plaList = articut.getOpenDataPlaceLIST(tourblogDict)
     
     locationList = ResultDataProcessing(locList)
     placeList = ResultDataProcessing(plaList)
     tourblog_geoinfoFile = 'tourblog_geoinfo.json'
     jsonFileWriter({"location":locationList, "place":placeList}, tourblog_geoinfoFile)
     
-    #criminal.json
+    #刑事判決_106,交簡,359_2017-02-21.json
     criminalJsonFile = '../example/刑事判決_106,交簡,359_2017-02-21.json'
     judgementText = jsonTextReader(criminalJsonFile)["judgement"]
     judgementText = judgementText.replace('\r', '')
@@ -66,11 +66,13 @@ if __name__== "__main__":
     #news.json
     newsJsonFile = '../example/news.json'
     newsText = jsonTextReader(newsJsonFile)['content']
-    resultDict = articut.parse(newsText, level = "lv2")
-    nameList = articut.getPersonLIST(resultDict)
-    locList = articut.getLocationStemLIST(resultDict)
+    newsDict = articut.parse(newsText, level = "lv2")
+    nameList = articut.getPersonLIST(newsDict)
+    locList = articut.getLocationStemLIST(newsDict)
+    moneyList = articut.getCurrencyLIST(newsDict)
 
     nameList = PeopleCountData(nameList)
     locList = ResultDataProcessing(locList)
+    moneyList = ResultDataProcessing(moneyList)
     news_infoFile = 'news_info.json'
-    jsonFileWriter({"people": nameList, "location": locList, "money": []}, news_infoFile)
+    jsonFileWriter({"people": nameList, "location": locList, "money": moneyList}, news_infoFile)
