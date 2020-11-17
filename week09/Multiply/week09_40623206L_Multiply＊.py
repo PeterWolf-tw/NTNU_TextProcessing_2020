@@ -1,4 +1,3 @@
-#-*-coding: cp950-*-
 #-*-coding: utf-8-*-
 
 import json
@@ -10,19 +9,17 @@ def jsonTextReader(jsonFilePath):
 
 if __name__== "__main__":
     
-    #tourblog.json
-    jsonFilePath = "../example/tourblog.json"
+    #Ëº∏ÂÖ• tourblog.json
+    jsonFilePath = 'D:/Âõõ‰∏ä/ÊñáÊú¨ÂàÜÊûê/example09/example/tourblog.json'
     tourblogSTR = jsonTextReader(jsonFilePath)["content"]
     tourblogSTR = tourblogSTR.replace(" " , "")
     articut = ArticutAPI.Articut()
     
-    #print("tourblogSTR")
-    #print(tourblogSTR)
+    print("tourblogSTR", tourblogSTR)
     #print(len(tourblogSTR))
     resultDICT = articut.parse(tourblogSTR , level = "lv2")
     
-    #print("resultDICT")
-    #print(resultDICT)
+    print("resultDICT", resultDICT)
     
     resultLIST = articut.getLocationStemLIST(resultDICT)
     locLIST = []
@@ -30,20 +27,16 @@ if __name__== "__main__":
     #print(resultLIST)
     while resultLIST.count([]):
         resultLIST.remove([])
-    #print("resultLIST")
+    print("resultLIST", resultLIST)
     #print(type(resultLIST))
-    #print(resultLIST)
     
     for i in resultLIST:
         if i[0][-1] not in locLIST:
             locLIST.append(i[0][-1])
     
     
-    #print("locLIST")
-    #print(locLIST)
-    
-    #print("tourblog")
-    #print(locLIST)
+    print("locLIST", locLIST)
+    #print("tourblog", locLIST)
     
     resultDICT = articut.parse(tourblogSTR , openDataPlaceAccessBOOL=True)
     resultLIST = articut.getOpenDataPlaceLIST(resultDICT)
@@ -51,7 +44,6 @@ if __name__== "__main__":
     
     while resultLIST.count([]):
         resultLIST.remove([])
-    
     
     openLIST = []
     
@@ -65,17 +57,17 @@ if __name__== "__main__":
     #print("loc and place")
     #print(jsonDICT)
     
-    #place ∏Ã¶≥ '§j§@¬I' ?
+    #place Ë£°Êúâ 'Â§ß‰∏ÄÈªû' ?
     with open('tourblog_geoinfo.json' , 'w' , encoding = 'utf-8') as f:
         json.dump(jsonDICT , f , ensure_ascii = False)    
     
-    #¶D®∆ßP®M_106,•Ê¬≤,359_2017-02-21.json
-    jsonFilePath = "../example/¶D®∆ßP®M_106,•Ê¬≤,359_2017-02-21.json"
+    #Âàë‰∫ãÂà§Ê±∫_106,‰∫§Á∞°,359_2017-02-21.json
+    jsonFilePath = "../example/Âàë‰∫ãÂà§Ê±∫_106,‰∫§Á∞°,359_2017-02-21.json"
     justiceSTR = jsonTextReader(jsonFilePath)["mainText"] 
     
-    #justiceSTR = justiceSTR.replace("∞—" , "3")
-    #print("justiceSTR")
-    #print(justiceSTR)
+    #justiceSTR = justiceSTR.replace("ÂèÉ" , "3")
+    print("justiceSTR", justiceSTR)
+
     
     articut = ArticutAPI.Articut()
         
@@ -118,16 +110,13 @@ if __name__== "__main__":
     for i in nameDICT:
         nameLIST.append((i,nameDICT[i]))
     
-    #print("nameLIST")
-    #print(nameLIST)
+    print("nameLIST", nameLIST)
     
-    
-    
+
     articut = ArticutAPI.Articut()
     
-    #print("tourblogSTR")
-    #print(tourblogSTR)
-    #print(len(tourblogSTR))
+    print("tourblogSTR", tourblogSTR)
+    print(len(tourblogSTR))
     
     resultDICT = articut.parse(newsSTR , level = "lv2")
     
@@ -141,8 +130,7 @@ if __name__== "__main__":
         if i[0][-1] not in locLIST:
             locLIST.append(i[0][-1])
     
-    #print("locLIST")
-    #print(locLIST)
+    print("locLIST", locLIST)
         
     resultDICT = articut.parse(newsSTR , level="lv2")
     resultLIST = articut.getCurrencyLIST(resultDICT)
@@ -156,14 +144,10 @@ if __name__== "__main__":
         if i[0][-1] not in moneyLIST:
             moneyLIST.append(i[0][-1])
     
-    #print("moneyLIST")
-    #print(moneyLIST)
-    
+    print("moneyLIST", moneyLIST)  
     
     
     resultDICT = {"people": nameLIST , "location": locLIST , "money": moneyLIST}
                 
     with open('news_info.json' , 'w' , encoding = 'utf-8') as f:
        json.dump(resultDICT , f , ensure_ascii = False)
-    
-    

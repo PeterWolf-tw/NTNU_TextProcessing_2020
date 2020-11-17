@@ -61,4 +61,5 @@ if __name__ == "__main__":
     resultDict = articut.parse(newsContent, level = "lv2")
     nameList = getData(articut.getPersonLIST(resultDict), 3)
     locList = getData(articut.getLocationStemLIST(resultDict), 1)
-    createJson("./news_info.json", {"people": nameList, "location": locList, "money": []})
+    monList = getData(articut.getCurrencyLIST(resultDict), 1)
+    createJson("./news_info.json", {"people": nameList, "location": locList, "money": monList})
