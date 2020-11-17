@@ -26,3 +26,29 @@ if __name__ == "__main__":
     foxNER = nltk.ne_chunk(foxPOS)
     foxnewsJson['foxNER'] = foxNER
     updateJson(foxnewsJsonPath, foxnewsJson)
+
+    foxnewsSTR= foxnewsSTR.replace("White House","white house")
+    foxsentenceLIST = nltk.sent_tokenize(foxnewsSTR)
+    foxwordLIST = []
+    for i in foxsentenceLIST:
+        foxwordLIST.extend(nltk.word_tokenize(i))
+    foxPOS = nltk.pos_tag(foxwordLIST)
+    foxNER = nltk.ne_chunk(foxPOS)
+    foxnewsJson=readJson('./foxnews.json')
+    foxnewsJson_NER=foxnewsJson['foxNER']
+
+
+    print("In foxNER:")
+    for i in foxNER:
+        if 'white' in i:
+            print(i,end=" ")
+        elif 'house' in i:
+            print(i,end=" ")
+    print("\n","In foxnewsJson:",sep="")
+    for i in foxnewsJson_NER:
+        for  j in i:
+            if 'White' in j:
+                print(j,end=" ")
+            if 'House' in j:
+                print(j,end=" ")
+                exit()
