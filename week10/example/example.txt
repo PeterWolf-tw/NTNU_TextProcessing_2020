@@ -1,0 +1,8 @@
+inputSTR01 = """I went to Japan. (NOT I went to the Japan.)
+He played tennis with Ben. (NOT He played tennis with the Ben.)
+They had breakfast at 9 o’clock. (NOT They had a breakfast at 9 o'clock.)
+(Some words don't have an article. We don't usually use articles for countries, meals or people.)"""
+
+inputSTR02 = """In essence, that's about as far as President Trump is likely to go. Even if he eventually acknowledges he won't be president from 20th January, he'll probably never relinquish his unsubstantiated claims that he was beaten in a fraudulent vote."""
+
+inputSTR03 = """雙 11 都過了。還在猶豫要不要入手新鍵盤嗎？K8 $200 折價券使用時間只到今天晚上 12 點，趕快把握時間下手最優惠！"""
