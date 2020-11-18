@@ -1,3 +1,6 @@
 [submodule "week09/SedNeoCat/ArticutAPI"]
 	path = week09/SedNeoCat/ArticutAPI
 url=https://github.com/Droidtown/ArticutAPI.git
+[submodule "week09/12345/ArticutAPI"]
+	path = week09/12345/ArticutAPI
+	url = https://github.com/Droidtown/ArticutAPI.git
