@@ -14,7 +14,7 @@ def jsonFileWriter(jsonDICT, jsonFileName):
     """convert jsonDICT into a jsonFile and save it as jsonFileName."""
     with open (jsonFileName, mode = "w") as f:
         #json.dump(要寫入的資料, 目標檔案, 是否要讓輸入值為ascii)
-        json.dump(jsonDICT, f, ensure_ascii = False)
+        json.dump(jsonDICT, f, indent = 4, ensure_ascii = False)
         
 def nltkTool(jsonDICT):
     
@@ -45,11 +45,16 @@ if __name__== "__main__":
     nltkDICT = nltkTool(jsonDICT)
     
     jsonFileWriter(nltkDICT, jsonFilePath) 
-    print(jsonTextReader(jsonFilePath)["foxNER"])
+    #print(jsonTextReader(jsonFilePath))
     
-    compareDICT = nltkDICT
-    compareDICT["content"] = compareDICT["content"].replace("White House", "white house")
+    compareDICT = {}
+    compareDICT['content'] = nltkDICT["content"].replace("White House", "white house")
+    #print(compareDICT)
     nltkDICT2 = nltkTool(compareDICT)
-    print(nltkDICT2["foxNER"])
     
+    print("In original foxNER:")
+    print(nltkDICT['foxNER'])
+    print()
     
+    print("In replaced foxNER:")
+    print(nltkDICT2['foxNER'])
