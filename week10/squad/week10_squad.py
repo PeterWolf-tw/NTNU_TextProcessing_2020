@@ -5,8 +5,18 @@ import json, nltk
 
 #讀取 json 的程式
 def jsonTextReader(jsonFilePath):
-    with open (jsonFilePath, "r") as f:
-        jsonContent = json.load(f)
+    try:
+        with open (jsonFilePath, "r", encoding = "utf-8") as f:
+            jsonContent = json.load(f)
+    except UnicodeDecodeError:
+        try:
+            #用 Big-5 (encoding="cp950") 來開檔案
+            with open (jsonFilePath, "r", encoding="cp950") as f:
+                jsonContent = json.load(f)            
+        except:
+            #用 GB (encoding="gb") 來開檔案
+            with open (jsonFilePath, "r", encoding="gb") as f:
+                jsonContent = json.load(f)            
     return jsonContent
 
 #寫入json的程式
