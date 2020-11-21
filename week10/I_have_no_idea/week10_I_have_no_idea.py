@@ -46,8 +46,8 @@ def jsonWriter(jsonDICT, jsonFileName):
 def nltk_processed(jsonDICT):
     
 #SegSentence:
-    news= jsonDICT["content"]
-    foxsentenceLIST = nltk.sent_tokenize(news)
+    foxnewsSTR= jsonDICT["content"]
+    foxsentenceLIST = nltk.sent_tokenize(foxnewsSTR)
 
 #SegWords:
     foxWordLIST = []
@@ -83,14 +83,14 @@ if __name__ == "__main__":
 # swap White House for white house to see the whether Name Entity Recognition result is different or not
     swapDICT = {}
     swapDICT["content"] = resultDICT["content"].replace("White House", "white house")
-    print(swapDICT["content"])
+   
     NER_testerDICT = nltk_processed(swapDICT)
     
     #TypeError: string indices must be integers
     #TypeError: list indices must be integers or slices, not str
     
     #solution:｛｝
-    jsonWriter(NER_testerDICT, jsonFilePath)
+
     
     print("foxNER_capital:", resultDICT["foxNER"])
     print("foxNER_lower", NER_testerDICT["foxNER"])
