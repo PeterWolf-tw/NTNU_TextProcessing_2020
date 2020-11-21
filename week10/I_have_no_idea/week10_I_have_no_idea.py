@@ -95,4 +95,4 @@ if __name__ == "__main__":
     print("foxNER_capital:", resultDICT["foxNER"])
     print("foxNER_lower", NER_testerDICT["foxNER"])
     
-    #NER_TEST　　　　FACILITY versus 
+    #NER_TEST　　　　FACILITY 
