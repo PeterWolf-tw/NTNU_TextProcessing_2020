@@ -63,8 +63,26 @@ if __name__== "__main__":
     nltkDICT2 = nltkTool(compareDICT)
     
     print("In original foxNER:")
-    print(nltkDICT['foxNER'])
-    print()
+    for i in jsonTextReader(jsonFilePath)["foxNER"]:
+        for j in i:
+            if "White" in j:
+                print(j)
+            if "House" in j:
+                print(j)
+            break
     
     print("In replaced foxNER:")
-    print(nltkDICT2['foxNER'])
+    for i in nltkDICT2['foxNER']:
+        for j in i:
+                if "white" in j:
+                    print(i)
+                if "house" in j:
+                    print(i)
+                break    
+            
+    #print("In original foxNER:")
+    #print(nltkDICT['foxNER'])
+    #print()
+    #print("In replaced foxNER:")
+    #print(nltkDICT2['foxNER'])    
+    #print("In original foxNER:")    
