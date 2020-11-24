@@ -78,7 +78,7 @@ def contentWordPlusPosCounter(inputSTR):
 
 
 if __name__== "__main__":
-    with open("台灣關係法.txt", encoding="utf-8") as f:
+    with open("館長全文.txt", encoding="utf-8") as f:
         textSTR = f.read()
 
     charCountLIST = charCounter(textSTR)
@@ -86,7 +86,7 @@ if __name__== "__main__":
 
     articut = ArticutAPI.Articut()
     segTextSTR = ""
-    for i in range(1, len(textSTR), 2000):
+    for i in range(0, len(textSTR), 2000):
         resultDICT = articut.parse(textSTR[i:i+2000])
         segTextSTR = segTextSTR + resultDICT["result_segmentation"]
     print(segTextSTR)
@@ -94,7 +94,7 @@ if __name__== "__main__":
     print(wordCountLIST)
 
     posTextLIST = []
-    for i in range(1, len(textSTR), 2000):
+    for i in range(0, len(textSTR), 2000):
         resultDICT = articut.parse(textSTR[i:i+2000])
         posTextLIST.extend(resultDICT["result_pos"])
     posTextSTR = "".join([p for p in posTextLIST if len(p) > 1])
@@ -104,7 +104,7 @@ if __name__== "__main__":
 
 
     contentTextLIST = []
-    for i in range(1, len(textSTR), 2000):
+    for i in range(0, len(textSTR), 2000):
         resultDICT = articut.parse(textSTR[i:i+2000])
         contentLIST = articut.getContentWordLIST(resultDICT)
         for c in contentLIST:
