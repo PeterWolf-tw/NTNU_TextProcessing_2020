@@ -170,5 +170,5 @@ if __name__== "__main__":
     
     print(jsonDICT3)
     jsonFileName = "news_info.json"
-    jsonFileWriter(jsonDICT, jsonFileName)      
+    jsonFileWriter(jsonDICT3, jsonFileName)      
     

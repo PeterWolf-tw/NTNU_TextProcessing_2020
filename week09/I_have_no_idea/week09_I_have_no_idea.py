@@ -24,9 +24,9 @@ def jsonWriter(jsonDICT, jsonFileName):
 
 #a - 行政地名：
 def Locations(jsonSTR):
-    articut = ArticutAPI. Articut()
+    articut = ArticutAPI.Articut()
     resultDICT = articut.parse(jsonSTR, level = "lv2")
-    resultLIST = articut. getLocationStemLIST(resultDICT)
+    resultLIST = articut.getLocationStemLIST(resultDICT)
 
     return resultLIST
 
@@ -35,9 +35,9 @@ def Locations(jsonSTR):
 
 #a - 景點名稱：
 def TouristSpots(jsonSTR):
-    articut = ArticutAPI. Articut()
-    resultDICT = articut. parse(jsonSTR, level = "lv2")
-    resultLIST = articut. getPersonLIST(resultDICT)
+    articut = ArticutAPI.Articut()
+    resultDICT = articut.parse(jsonSTR, level = "lv2")
+    resultLIST = articut.getPersonLIST(resultDICT)
 
     return resultLIST
 
@@ -46,10 +46,10 @@ def TouristSpots(jsonSTR):
 
 #b - 刑事判決
 def verdict(jsonSTR):
-    articut = ArticutAPI. Articut()
+    articut = ArticutAPI.Articut()
     resultDICT = articut.parse(jsonSTR, level = "lv2")
 
-    lawTK = ArticutAPI. LawsToolkit(resultDICT)
+    lawTK = ArticutAPI.LawsToolkit(resultDICT)
     
     resultLIST = lawTK.getLawArticle()
     
@@ -59,7 +59,7 @@ def verdict(jsonSTR):
 #c - 人物
 def suspects(jsonSTR):
     articut = ArticutAPI.Articut()
-    resultDICT = articut.parse(inputSTR, level = "lv2")
+    resultDICT = articut.parse(jsonSTR, level = "lv2")
     resultLIST = articut.getPersonLIST(resultDICT)
 
     return resultLIST
@@ -70,7 +70,7 @@ def suspects(jsonSTR):
 #c - 涉案金額
 def Fine2Pay(jsonSTR):
     articut = ArticutAPI.Articut()
-    resultDICT = articut.parse(inputSTR, level="lv2")
+    resultDICT = articut.parse(jsonSTR, level="lv2")
     resultLIST = articut.getCurrencyLIST(resultDICT)
 
     return resultLIST
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     print("assignment a: ", jsonDICTa)
     jsonWriter (jsonDICTa, jsonFileName)
 
-#ASSIGNMENT b
+#ASSIGNMENT (11/17)split the passage; for it is over 2,000 words!
 
     jsonFilePath4theGuilty = "../example/刑事判決_106,交簡,359_2017-02-21.json"
     suspectsContent = jsonReader(jsonFilePath4theGuilty)["judgement"].replace(" ", "")

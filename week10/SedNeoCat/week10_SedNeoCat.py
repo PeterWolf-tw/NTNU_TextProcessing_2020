@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import json, nltk
+nltk.download('words')
 
 def readJson(jsonPath):
     with open(jsonPath, 'r', encoding='utf-8') as f:
