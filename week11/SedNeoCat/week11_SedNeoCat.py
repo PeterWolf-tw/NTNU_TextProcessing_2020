@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-import json
+import json,sys
+sys.path.append("../../week09/SedNeoCat/")
 from ArticutAPI import ArticutAPI
 
 def jsonFileWriter(jsonDICT, jsonFileName):
