@@ -115,12 +115,14 @@ if __name__ == "__main__":
        
         resultDICT = articut.parse(dbpSTR[i:i+2000])
         seg_dbpSTR = seg_dbpSTR + resultDICT['result_segmentation']
-        
+    wordCount_dbp = wordCounter(seg_dbpSTR)
+    
     pos_dbpLIST = []   
     for i in range(0, len(dbpSTR), 2000):
         pos_dbpLIST.extend(resultDICT["result_pos"])
         pos_dbpSTR = "".join([p for p in pos_dbpLIST if len(p)>1])
-        
+    posWordCount_dbp = wordPlusPosCounter(pos_dbpSTR)
+    
     content_dbpLIST = []
     for i in range(0, len(dbpSTR), 2000):
         contentLIST = articut. getContentWordLIST(resultDICT)
@@ -129,10 +131,10 @@ if __name__ == "__main__":
                 for w in c:
                     content_dbpLIST.append(w[-1])
         posContent_dbpSTR = "/".join(content_dbpLIST)
-        
-    wordCount_dbp = wordCounter(seg_dbpSTR)
-    posWordCount_dbp = wordPlusPosCounter(pos_dbpSTR)
-    contentWord_dbp = contentWordPlusPosCounter(posContent_dbpSTR)
+    contentWord_dbp = contentWordPlusPosCounter(posContent_dbpSTR) 
+    
+    
+    
     
 # pbd
     seg_pbdSTR = ""
@@ -140,12 +142,14 @@ if __name__ == "__main__":
    
         resultDICT = articut.parse(pbdSTR[i:i+2000])
         seg_pbdSTR = seg_pbdSTR + resultDICT['result_segmentation']
-        
+    wordCount_pbd = wordCounter(seg_pbdSTR)
+    
     pos_pbdLIST = []  
     for i in range(0, len(pbdSTR), 2000):
         pos_pbdLIST.extend(resultDICT["result_pos"])
         pos_pbdSTR = "".join([p for p in pos_pbdLIST if len(p)>1])
-        
+    posWordCount_pbd = wordPlusPosCounter(pos_pbdSTR)
+    
     content_pbdLIST = []    
     for i in range(0, len(pbdSTR), 2000):
         contentLIST = articut. getContentWordLIST(resultDICT)
@@ -154,9 +158,6 @@ if __name__ == "__main__":
                 for w in c:
                     content_pbdLIST.append(w[-1])
         posContent_pbdSTR = "/".join(content_pbdLIST)
-    
-    wordCount_pbd = wordCounter(seg_pbdSTR)
-    posWordCount_pbd = wordPlusPosCounter(pos_pbdSTR)
     contentWord_pbd = contentWordPlusPosCounter(posContent_pbdSTR)
 
 
