@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys, typing, json
 sys.path.append("../../week09/SedNeoCat/")
+from ArticutAPI import ArticutAPI
 
 def txtExtractor(path: str):
     with open(path, encoding="utf-8") as f:
@@ -30,7 +31,6 @@ def createJson(jsonPath, inputDict):
         json.dump(inputDict, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
-    from ArticutAPI import ArticutAPI
     articut = ArticutAPI.Articut()
     result = {"倉鼠": [], "皇帝企鵝": []}
     mouseTxt = txtExtractor("text.txt")
