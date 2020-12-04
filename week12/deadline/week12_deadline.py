@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-import sys
+import sys,json
 sys.path.append("../../week09/deadline")
 from ArticutAPI import ArticutAPI
 
@@ -23,6 +23,11 @@ def findVerb(inputSTR):
     verbLIST = articut.getVerbStemLIST(resultLIST)
     return verbLIST
 
+def jsonFileWriter(jsonDICT, jsonFileName):
+    """convert jsonDICT into a jsonFile and save it as jsonFileName."""
+    with open (jsonFileName, mode = "w") as f:
+        json.dump(jsonDICT, f, ensure_ascii = False)
+
 if __name__=="__main__":
     textSTR = TextReader("../example/text.txt")
     
@@ -36,11 +41,20 @@ if __name__=="__main__":
     verbLIST02=list(filter(None, textLIST02))
     print(verbLIST02)
     
-    #penguinSTR = TextReader("penguin.txt")
-    #articut = ArticutAPI.Articut()
-    #textLIST = findEvent(penguinSTR,articut)
-    #eventLIST = textLIST["event"]
-    #penguinLIST = list(filter(None, eventLIST))
-    #print(penguinLIST)
+    penguinSTR = TextReader("penguin.txt")
+    articut = ArticutAPI.Articut()
+    textLIST = findEvent(penguinSTR,articut)
+    eventLIST = textLIST["event"]
+    penguinLIST = list(filter(None, eventLIST))
+    print(penguinLIST)
+    
+    
+    jsonDICT={
+    "倉鼠":eventLIST01,"皇帝企鵝":penguinLIST
+    }
+    
+    jsonFileName = "week12_deadline.json"
+    jsonFileWriter(jsonDICT, jsonFileName)          
+    
     
     
