@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+import sys
+sys.path.append("../../week09/deadline")
 from ArticutAPI import ArticutAPI
+
 '''3.(a)text.txt內容用來產生關於倉鼠的知識
    (b)取出text.txt中的動詞和a比較
    4.皇帝企鵝利用articut lv3 event功能建立知識
@@ -25,7 +28,19 @@ if __name__=="__main__":
     
     articut = ArticutAPI.Articut()
     textLIST01 = findEvent(textSTR,articut)
-    
     eventLIST = textLIST01["event"]
+    eventLIST01 = list(filter(None, eventLIST))
+    print(eventLIST01)
+    
     textLIST02 = findVerb(textSTR)
-    print(eventLIST,textLIST02)
+    verbLIST02=list(filter(None, textLIST02))
+    print(verbLIST02)
+    
+    #penguinSTR = TextReader("penguin.txt")
+    #articut = ArticutAPI.Articut()
+    #textLIST = findEvent(penguinSTR,articut)
+    #eventLIST = textLIST["event"]
+    #penguinLIST = list(filter(None, eventLIST))
+    #print(penguinLIST)
+    
+    
