@@ -9,7 +9,7 @@ from ArticutAPI import ArticutAPI
 # king penguine 
 
 
-def textRead():
+def textRead(txtPath):
     with open (txtPath,"r", encoding = "utf-8") as f:
         inputSTR = f.read()
         return inputSTR
@@ -23,12 +23,12 @@ def getEvent(inputSTR, nlptool):
 #compare to the event
 
 def getVerb(inputSTR):
-    verbDICT = articut.parse(inputSTR, level="lv3")
+    verbDICT = articut.parse(inputSTR, level="lv2")
     verbLIST = articut.getVerbStemLIST(verbDICT,level = "lv2")
     return verbLIST
 
 def jsonWriter(jsonDICT, jsonName):
-    with open (jsonName, "w") as f:
+    with open (jsonName, mode = "w") as f:
         json.dump(jsonDICT, f, ensure_ascii = False)
         
 
@@ -36,27 +36,27 @@ def jsonWriter(jsonDICT, jsonName):
 
 if __name__ == "_main_":
     # hamster
-    txtPath =  "text.txt"
-    inputSTR_Hamster = textRead(txtPath)
+    
+    inputSTR_Hamster = textRead("text.txt")
     articut = ArticutAPI.Articut()
     
-    eventDICT = getEvent(inputSTR_Hamster, articut)
-    eventLIST = eventDICT["event"]
+    resultLIST = getEvent(inputSTR_Hamster, articut)
+    eventLIST = resultLIST["event"]
     eventLIST_Hamster = list(filter(None, eventLIST)) 
     print(eventLIST_Hamster)
     
     # compare EVENTS and VERBS
     verbLIST = getVerb(inputSTR_Hamster)
-    
+    print(verbLIST)
 
     
     #king penguines
-    txtPath = "King_Penguines_Wiki.txt"
-    inputSTR_Penguine = textRead(txtPath)
+    
+    inputSTR_Penguine = textRead("King_Penguines_Wiki.txt")
     articut = ArticutAPI.Articut()
     
-    eventDICT = getEvent(inputSTR_Penguine, articut)
-    eventLIST = eventDICT["event"]
+    resultLIST = getEvent(inputSTR_Penguine, articut)
+    eventLIST = resultLIST["event"]
     eventLIST_KingPenguines= list(filter(None, eventLIST)) 
     print(eventLIST_KingPenguines)
     
