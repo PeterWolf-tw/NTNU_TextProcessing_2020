@@ -9,10 +9,7 @@ from ArticutAPI import ArticutAPI
 # king penguine 
 
 
-def textRead(txtPath):
-    with open (txtPath,"r", encoding = "utf-8") as f:
-        inputSTR = f.read()
-        return inputSTR
+
     
 # for the knowledge of hamsters
 
@@ -22,10 +19,10 @@ def getEvent(inputSTR, nlptool):
 
 #compare to the event
 
-def getVerb(inputSTR):
-    verbDICT = articut.parse(inputSTR, level="lv2")
-    verbLIST = articut.getVerbStemLIST(verbDICT,level = "lv2")
-    return verbLIST
+#def getVerb(inputSTR):
+    #verbDICT = articut.parse(inputSTR, level="lv2")
+    #verbLIST = articut.getVerbStemLIST(verbDICT,level = "lv2")
+    #return verbLIST
 
 def jsonWriter(jsonDICT, jsonName):
     with open (jsonName, mode = "w") as f:
@@ -36,28 +33,30 @@ def jsonWriter(jsonDICT, jsonName):
 
 if __name__ == "_main_":
     # hamster
+    with open ("text.txt", encoding = "utf-8") as f:
+        inputSTR = f.read()  
     
-    inputSTR_Hamster = textRead("text.txt")
     articut = ArticutAPI.Articut()
     
-    resultLIST = getEvent(inputSTR_Hamster, articut)
-    eventLIST = resultLIST["event"]
-    eventLIST_Hamster = list(filter(None, eventLIST)) 
+    resultLIST = getEvent(inputSTR, articut)
+    eventLIST_Hamster = resultLIST["event"]
+    
     print(eventLIST_Hamster)
     
     # compare EVENTS and VERBS
-    verbLIST = getVerb(inputSTR_Hamster)
-    print(verbLIST)
+    # verbLIST = getVerb(inputSTR_Hamster)
+    # print(verbLIST)
 
     
     #king penguines
-    
-    inputSTR_Penguine = textRead("King_Penguines_Wiki.txt")
+    with open ("King_Penguines_Wiki.txt","r", encoding = "utf-8") as f:
+        inputSTR = f.read()      
+
     articut = ArticutAPI.Articut()
     
-    resultLIST = getEvent(inputSTR_Penguine, articut)
-    eventLIST = resultLIST["event"]
-    eventLIST_KingPenguines= list(filter(None, eventLIST)) 
+    resultLIST = getEvent(inputSTR, articut)
+    eventLIST_KingPenguines = resultLIST["event"]
+
     print(eventLIST_KingPenguines)
     
     jsonDICT = {
@@ -65,5 +64,5 @@ if __name__ == "_main_":
     "King penguines": eventLIST_KingPenguines
     }
     
-    jsonName = "week12_I Have No Idea"
+    jsonName = "week12_I Have No Idea.json"
     jsonWriter(jsonDICT, jsonName)
