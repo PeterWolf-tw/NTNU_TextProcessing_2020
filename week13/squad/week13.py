@@ -12,7 +12,7 @@ def createJson(jsonPath, inputDICT):
 
 if __name__ == "__main__":
 
-    simLIST = ["工程師"]
+    simLIST = ["鱷魚", "羊駝", "羚羊", "黑猩猩", "熊", "野豬", "獵豹", "恐龍", "海豚", "鴨子"]
 
     model = models.Word2Vec.load("C:\\Users\\ALICE\\Desktop\\wiki2019tw_word2vec_cbow_d300\\wiki2019tw_word2vec_cbow_d300.model") #請適度調整你的模型目錄位置
     
