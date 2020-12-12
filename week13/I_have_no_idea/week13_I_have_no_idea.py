@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     simLIST = ["鬼滅之刃","宮崎駿","望塵莫及","望其項背","望梅止渴","奶茶","珍珠","仙草","伯爵","芋頭"]
 
-    model = models.Word2Vec.load("wiki2019tw_word2vec_cbow_d100.model") #請適度調整你的模型目錄位置
+    model = models.Word2Vec.load("./wiki2019tw_word2vec_cbow_d300.model") #請適度調整你的模型目錄位置
 
     jsonDICT = {}
     
