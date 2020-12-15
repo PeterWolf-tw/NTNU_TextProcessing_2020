@@ -7,7 +7,7 @@ from gensim import models
 
 def jsonFileWriter(jsonDICT, jsonFileName):
     with open(jsonFileName, mode="w", encoding="utf-8") as f:
-        json.dump(jsonDICT, f, ensure_ascii=False)
+        json.dump(jsonDICT, f, indent=4, ensure_ascii=False)
     return None
 
 if __name__ == "__main__":
