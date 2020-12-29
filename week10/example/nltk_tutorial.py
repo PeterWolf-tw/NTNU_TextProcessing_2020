@@ -5,11 +5,10 @@ import nltk
 
 def main(inputSTR):
     sentenceLIST = nltk.sent_tokenize(inputSTR)
-
     return sentenceLIST
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     inputSTR01 = """I went to Japan. (NOT I went to the Japan.)
 He played tennis with Ben. (NOT He played tennis with the Ben.)
 They had breakfast at 9 o’clock. (NOT They had a breakfast at 9 o'clock.)
